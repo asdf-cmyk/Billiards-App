@@ -1,23 +1,73 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"
+import {
+  Container,
+  Header,
+  Content,
+  Button,
+  Text,
+  Form,
+  Item,
+  Input,
+  Footer,
+  FooterTab,
+  Icon
+} from "native-base"
 
 class ChatList extends React.Component {
-  render(){
+  state = {
+    score: 1250
+  }
+  render() {
     return (
-      <View style={styles.container}>
-        <Text>ChatList</Text>
-      </View>
-    );
-  }  
+      <Container>
+        <Header />
+        <Content>
+          <Text>채팅 리스트</Text>
+        </Content>
+        <Footer>
+          <FooterTab>
+            <Button
+              vertical
+              onPress={() => {
+                this.props.navigation.navigate("Home")
+              }}
+            >
+              <Icon name="home" />
+              <Text>홈</Text>
+            </Button>
+            <Button
+              vertical
+              active
+              onPress={() => {
+                this.props.navigation.navigate("ChatList")
+              }}
+            >
+              <Icon name="md-chatboxes" />
+              <Text>채팅</Text>
+            </Button>
+            <Button
+              vertical
+              onPress={() => {
+                this.props.navigation.navigate("NearStadium")
+              }}
+            >
+              <Icon active name="map" />
+              <Text>근처당구장</Text>
+            </Button>
+            <Button
+              vertical
+              onPress={() => {
+                this.props.navigation.navigate("UserInfo")
+              }}
+            >
+              <Icon name="person" />
+              <Text>내정보</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+      </Container>
+    )
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default ChatList

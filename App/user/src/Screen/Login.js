@@ -1,12 +1,29 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { Container, Header, Content,Button,Text, Form, Item, Input } from 'native-base';
+import { StyleSheet} from 'react-native';
 
 class Login extends React.Component {
   render(){
     return (
-      <View style={styles.container}>
-        <Text>Login</Text>
-      </View>
+      <Container>
+        <Header />
+        <Content>
+          <Form>
+            <Item>
+              <Input placeholder="Username" />
+            </Item>
+            <Item last>
+              <Input placeholder="Password" />
+            </Item>
+          </Form>
+          <Button onPress={() => {this.props.navigation.navigate("Home")}}>
+            <Text>로그인</Text>
+          </Button>
+          <Button onPress={() => {this.props.navigation.navigate("SignUp")}}>
+            <Text>회원가입</Text>
+          </Button>
+        </Content>
+      </Container>
     );
   }  
 }
