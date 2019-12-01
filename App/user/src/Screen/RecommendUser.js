@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import Layout from "../Components/Layout"
 
 class RecommendUser extends React.Component {
   render(){
     return (
-      <View style={styles.container}>
-        <Text>RecommendUser</Text>
-      </View>
+      <Layout navigation={this.props.navigation} title="추천 유저">
+        <Text>추천 유저</Text>
+      </Layout>
     );
   }  
 }

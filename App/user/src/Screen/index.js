@@ -13,8 +13,6 @@ import SignUp from "./SignUp"
 import StadiumInfo from "./StadiumInfo"
 import UserInfo from "./UserInfo"
 
-import MyFooter from '../Components/MyFooter'
-
 const AppNavigator = createSwitchNavigator(
   {
     Chat: {
@@ -29,8 +27,7 @@ const AppNavigator = createSwitchNavigator(
     Reservation: { screen: Reservation },
     SignUp: { screen: SignUp },
     StadiumInfo: { screen: StadiumInfo },
-    UserInfo: { screen: UserInfo },
-    MyFooter: {screen: MyFooter}
+    UserInfo: { screen: UserInfo }
   },
   { initialRouteName: "Login" }
 )

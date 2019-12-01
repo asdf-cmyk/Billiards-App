@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Header, Content,Button,Text, Form, Item, Input } from 'native-base';
 import { StyleSheet} from 'react-native';
+import Layout from "../Components/Layout"
 
 class Login extends React.Component {
   render(){

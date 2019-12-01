@@ -12,6 +12,8 @@ import {
   FooterTab,
   Icon
 } from "native-base"
+import MyFooter from '../Components/MyFooter'
+import Layout from "../Components/Layout"
 
 class NearStadium extends React.Component {
   state = {
@@ -19,53 +21,9 @@ class NearStadium extends React.Component {
   }
   render() {
     return (
-      <Container>
-        <Header />
-        <Content>
-          <Text>근처 당구장</Text>
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button
-              vertical
-              onPress={() => {
-                this.props.navigation.navigate("Home")
-              }}
-            >
-              <Icon name="home" />
-              <Text>홈</Text>
-            </Button>
-            <Button
-              vertical
-              onPress={() => {
-                this.props.navigation.navigate("ChatList")
-              }}
-            >
-              <Icon name="md-chatboxes" />
-              <Text>채팅</Text>
-            </Button>
-            <Button
-              vertical
-              active
-              onPress={() => {
-                this.props.navigation.navigate("NearStadium")
-              }}
-            >
-              <Icon active name="map" />
-              <Text>근처당구장</Text>
-            </Button>
-            <Button
-              vertical
-              onPress={() => {
-                this.props.navigation.navigate("UserInfo")
-              }}
-            >
-              <Icon name="person" />
-              <Text>내정보</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
+      <Layout navigation={this.props.navigation} title="근처 당구장">
+        <Text>근처 당구장</Text>
+      </Layout>
     )
   }
 }

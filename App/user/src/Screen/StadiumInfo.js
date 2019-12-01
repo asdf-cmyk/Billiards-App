@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import Layout from "../Components/Layout"
 
 class StadiumInfo extends React.Component {
   render(){
     return (
-      <View style={styles.container}>
-        <Text>StadiumInfo</Text>
-      </View>
+      <Layout navigation={this.props.navigation} title="당구장 정보">
+        <Text>당구장 정보</Text>
+      </Layout>
     );
   }  
 }
