@@ -15,9 +15,7 @@ import UserInfo from "./UserInfo"
 
 const AppNavigator = createSwitchNavigator(
   {
-    Chat: {
-      screen: Chat
-    },
+    Chat: { screen: Chat },
     ChatList: { screen: ChatList },
     Home: { screen: Home },
     Login: { screen: Login },

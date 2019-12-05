@@ -9,6 +9,7 @@ import {
   Icon,
   Text
 } from "native-base"
+
 export default class MyFooter extends Component {
   render() {
     return (

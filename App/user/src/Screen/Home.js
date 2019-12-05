@@ -15,11 +15,25 @@ import {
   Icon
 } from "native-base"
 import Layout from "../Components/Layout"
+import axios from 'axios'
 
 class Home extends React.Component {
-  state = {
-    score: 1250
+  constructor(props){
+    super(props)
   }
+  state = {
+    score: 1250,
+    locationType: '지역',
+    matchType: true
+  }
+
+  getRanking = () => {
+    //서버에 랭킹 정보 요청
+  }
+  setMatchState = () => {
+    //서버에 매치 상태 변경 요청
+  }
+
   render() {
     return (
       <Layout navigation={this.props.navigation} title="홈">
@@ -28,7 +42,10 @@ class Home extends React.Component {
             <List>
               <ListItem>
                 <Text>랭킹</Text>
-                <Button>
+                <Button onPress={()=> {
+                  this.state.locationType === "지역" ? this.setState({locationType : "전국"}) : this.setState({locationType : "지역"})
+
+                }}>
                   <Text>변경</Text>
                 </Button>
               </ListItem>
@@ -46,7 +63,7 @@ class Home extends React.Component {
               </ListItem>
             </List>
             <Button>
-              <Text>매칭 ON</Text>
+              {this.state.matchType === true ? <Text>매칭 ON</Text> : <Text>매칭 OFF</Text>}
             </Button>
             <Button
               onPress={() => this.props.navigation.navigate("RecommendUser")}

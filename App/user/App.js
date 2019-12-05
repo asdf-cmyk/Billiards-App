@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native"
 import { AppLoading } from "expo"
 import * as Font from "expo-font"
 import { Ionicons } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import Navigator from "./src/Screen"
 
@@ -39,6 +40,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: getStatusBarHeight(),
     backgroundColor: "#fff"
   }
 })
