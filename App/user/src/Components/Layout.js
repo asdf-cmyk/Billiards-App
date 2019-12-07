@@ -32,7 +32,7 @@ class Home extends React.Component {
             <Title>{this.props.title}</Title>
           </Body>
         </Header>
-        <Content style={{ flex: 1 }} >{this.props.children}</Content>
+        <Content contentContainerStyle={{flex:1}}>{this.props.children}</Content>
         <MyFooter navigation={this.props.navigation}></MyFooter>
       </Container>
     )

@@ -17,6 +17,13 @@ import {
 import Layout from "../Components/Layout"
 
 class RecommendUser extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  state = {
+    
+  }
+
   render() {
     return (
       <Layout navigation={this.props.navigation} title="추천 유저">

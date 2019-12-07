@@ -1,7 +1,8 @@
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { Platform  } from "react-native"
 import { GiftedChat } from "react-native-gifted-chat"
 import Layout from "../Components/Layout"
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 class Chat extends React.Component {
   state = {
@@ -40,18 +41,10 @@ class Chat extends React.Component {
             _id: 1
           }}
         />
+        {Platform.OS === 'android' ? <KeyboardSpacer /> : null }
       </Layout>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-})
 
 export default Chat
